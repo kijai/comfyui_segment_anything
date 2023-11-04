@@ -309,7 +309,7 @@ class GroundingDinoSAMSegment:
             )
             res_images.extend(images)
             res_masks.extend(masks)
-        return (torch.cat(res_images, dim=0), torch.cat(res_masks, dim=0))
+        return (torch.cat(res_images, dim=0), torch.stack(res_masks, dim=0))
 
 
 class InvertMask:
